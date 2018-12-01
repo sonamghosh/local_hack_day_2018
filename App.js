@@ -6,13 +6,22 @@ import {
   TouchableOpacity,
   StatusBar
 } from "react-native";
+import { ImageUploader } from "react-native-image-uploader";
 import { Camera, Permissions } from "expo";
 
 export default class CameraExample extends React.Component {
-  state = {
+  /*state = {
     hasCameraPermission: null,
     type: Camera.Constants.Type.back
-  };
+  };*/
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasCameraPermission: null,
+      imageUri: "",
+      type: Camera.Constants.Type.back
+    };
+  }
 
   async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -23,9 +32,50 @@ export default class CameraExample extends React.Component {
     if (this.camera) {
       console.log("SNAPPING PICTURE");
       let photo = await this.camera.takePictureAsync();
-      console.log(photo.uri);
+      console.log("URI from picture snap: " + photo.uri);
+      this.setState({ imageUri: photo.uri });
+      console.log("imageUri State: " + this.state.imageUri);
+      this.uploadImage();
     }
   };
+
+  // Upload image HTTP post
+  uploadImage() {
+    const data = new FormData();
+    data.append("name", "testName"); // you can append anyone.
+    data.append("file-to-upload", {
+      uri: this.state.imageUri,
+      type: "image/jpeg", // or photo.type
+      name: "testPhotoName"
+    });
+    fetch("https://essayboi.serveo.net", {
+      method: "post",
+      body: data
+    }).then(res => {
+      console.log(res);
+    });
+  }
+
+  /*uploadtoAPi() {
+    console.log("Uploading to Imgur...");
+    let url = "https://api.imgur.com/3/image";
+    let headers = {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": "token here"
+    };
+    let params = {
+      image: this.state.imageUri
+    };
+
+    ImageUploader.uploadtoServer(url, headers, params)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }*/
 
   render() {
     const { hasCameraPermission } = this.state;

@@ -10,7 +10,9 @@
     "expo": "^31.0.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "react-native-camera": "^1.4.3"
+    "react-native-api-client-wrapper": "^1.1.0",
+    "react-native-camera": "^1.4.3",
+    "react-native-image-uploader": "^1.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
