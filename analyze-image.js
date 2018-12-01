@@ -11,6 +11,8 @@ const subscriptionKey = 'ea8b096680c24990a45eba7976aa9c15';
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
 // westus, replace "westcentralus" in the URL below with "westus".
+
+// Azure Computer Vision OCR API
 const uriBase =
     'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr';
 
@@ -18,6 +20,7 @@ const uriBase =
     'http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg'; */
 
 // Upload image
+// Test Image
 // i see a brown bear. i see a blue bird. i see the red crab
 const imageUrl = 'https://s3.amazonaws.com/tinycards/image/14cb9cce8ef640adf685355ff8df44eb'
 
@@ -28,6 +31,8 @@ const params = {
     'language': 'en'
 };
 
+
+// Call Microsoft Azure Computer Vision OCR tool to analyze image
 const options = {
     uri: uriBase,
     qs: params,
@@ -67,6 +72,7 @@ let timer = setInterval(
     // Iterate through bounding boxes in JSON and parse strings
     for (var i = 0; i < arrLen; i++) {
       for (var j = 0; j < data.regions[0].lines[i].words.length; j++) {
+        // Adds new line at the end of string
         if (j == data.regions[0].lines[i].words.length - 1) {
           arr.push(data.regions[0].lines[i].words[j].text + '\n')
         }
@@ -81,5 +87,13 @@ let timer = setInterval(
     var outStr = arr.join(" ");
     console.log(outStr)
 
+    // Save text string to .txt file
+    const fs = require('fs');
+    fs.writeFile('text.txt', outStr, function(err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("The file was saved")
+    })
     clearInterval(timer);
   }, 2000)
