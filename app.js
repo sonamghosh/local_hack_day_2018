@@ -1,3 +1,4 @@
+const drive = require("./scripts/drive");
 const express = require("express");
 const multer = require("multer");
 const upload = multer({
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", upload.single("file-to-upload"), (req, res) => {
   res.statusCode = 200;
   res.end("Received file: " + req);
+  drive.driveUpload("text.txt");
 });
 
 app.listen(port, () => {
