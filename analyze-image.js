@@ -18,10 +18,6 @@ const uriBase =
     'http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg'; */
 
 // Upload image
-//const imageUrl = func1.uploadImgur('./dank_pics_01.jpg')
-//console.log('hello world' + imageUrl)
-
-//const imageUrl = 'https://i.imgur.com/7QZjQMt.jpg'
 // i see a brown bear. i see a blue bird. i see the red crab
 const imageUrl = 'https://s3.amazonaws.com/tinycards/image/14cb9cce8ef640adf685355ff8df44eb'
 
@@ -44,7 +40,12 @@ const options = {
 
 console.log(options)
 
-var output;
+// store json output that has the parsed strings
+var data;
+
+// Stores all the words
+var arr = [];
+
 
 request.post(options, (error, response, body) => {
   if (error) {
@@ -53,13 +54,32 @@ request.post(options, (error, response, body) => {
   }
   let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
   console.log('JSON Response\n');
-  //console.log(jsonResponse);
-  output = jsonResponse
+  console.log(jsonResponse);
+  data = JSON.parse(body);
 });
 
 // Timer to prevent undefined
 let timer = setInterval(
   () => {
-    console.log(output);
+    // Length of the important section
+    var arrLen = data.regions[0].lines.length;
+
+    // Iterate through bounding boxes in JSON and parse strings
+    for (var i = 0; i < arrLen; i++) {
+      for (var j = 0; j < data.regions[0].lines[i].words.length; j++) {
+        if (j == data.regions[0].lines[i].words.length - 1) {
+          arr.push(data.regions[0].lines[i].words[j].text + '\n')
+        }
+        else {
+        arr.push(data.regions[0].lines[i].words[j].text)
+        }
+      }
+    }
+    console.log(arr)
+
+    // Join Strings together, \n indicates line sep
+    var outStr = arr.join(" ");
+    console.log(outStr)
+
     clearInterval(timer);
-  }, 3000)
+  }, 2000)
