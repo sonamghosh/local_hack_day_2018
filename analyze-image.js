@@ -1,8 +1,5 @@
 'use strict';
 
-// Import functions from upload_to_imgur.js
-var func1 = require('./upload_to_imgur');
-
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
@@ -22,8 +19,8 @@ const uriBase =
 // Upload image
 // Test Image
 // i see a brown bear. i see a blue bird. i see the red crab
-const imageUrl = 'https://s3.amazonaws.com/tinycards/image/14cb9cce8ef640adf685355ff8df44eb'
-
+// const imageUrl = 'https://s3.amazonaws.com/tinycards/image/14cb9cce8ef640adf685355ff8df44eb'
+const imageUrl = 'https://essayboi.serveo.net'
 // Request parameters.
 const params = {
     'visualFeatures': 'Categories,Description,Color',
