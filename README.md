@@ -14,8 +14,15 @@ To access the **main** (backend) scripts within this repository go to the **src*
 
 Note for Spell Check functionality, the `spell_check.js` script is used to analyze extracted text from `analyze-image.js` or `recognize-text.js`, which calls upon **Microsoft Azure's Bing Spell Check API**. 
 
-Lastly, all the backend functionalty developed on **NodeJS (Javascript)** is used with the mobile app (`app.js`) that represents the frontend of our stack which was developed using the **React Native** framework for developing apps using **ReactJS (Javascript) **
-`
+Lastly, all the backend functionalty developed on **NodeJS (Javascript)** is used with the mobile app (`app.js`) that represents the frontend of our stack which was developed using the **React Native** framework for developing apps using **ReactJS (Javascript)**
+
+The app may be downloaded from here (remember to install Expo first from the Google Play Store or Apple App Store in order to access the app):
+
+https://expo.io/@nomlahlui/essay-boi
+
+`Check out our devpost as well!:
+
+https://devpost.com/software/essay-boi
 
 <img src = "full_stack_diagram.png">
 
