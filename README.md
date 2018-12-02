@@ -1,6 +1,10 @@
 ### Local Hack Day 2018
 
-For anyone who wants to scan their hand written work onto their computers or want a quick spell check, they can use this application. Microsoft Azure has Computer Vision APIs and Spell Check APIs which allow us to translate handwritten text to a string and also spell check the string. Google Drive API allows us to automatically push our text document onto your personal account. This is great for inddivuals or students who want to quickly convert their handwritten pieces of text whether it be a few sentences or an essay into a digital document to be viewed online for editing and flexibility. 
+Developers: Sonam Ghosh, Brian He, Halmon Lui
+
+License: MIT License
+
+For anyone who wants to scan their hand written work onto their computers or want a quick spell check, they can use this application. **Microsoft Azure** has **Computer Vision APIs** and **Spell Check APIs** which allow us to translate handwritten text to a string and also spell check the string. **Google Drive API** allows us to automatically push our text document onto your personal account. This is great for individuals or students who want to quickly convert their handwritten pieces of text whether it be a cooking recipe or a rough draft essay into a digital document to be viewed online for editing and flexibility. 
 
 To access the **main** (backend) scripts within this repository go to the **src** directory which contains the following files:
 
