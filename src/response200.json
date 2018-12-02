@@ -1,0 +1,59 @@
+{
+  "status": "Succeeded",
+  "recognitionResult": {
+    "lines": [
+      {
+        "boundingBox": [57, 259, 603, 277, 601, 349, 54, 331],
+        "text": "Hello my name is Sand",
+        "words": [
+          {
+            "boundingBox": [34, 258, 193, 261, 198, 338, 38, 335],
+            "text": "Hello"
+          },
+          {
+            "boundingBox": [210, 261, 294, 262, 298, 339, 214, 338],
+            "text": "my"
+          },
+          {
+            "boundingBox": [294, 262, 416, 264, 420, 341, 298, 339],
+            "text": "name"
+          },
+          {
+            "boundingBox": [416, 264, 479, 265, 483, 342, 420, 341],
+            "text": "is"
+          },
+          {
+            "boundingBox": [492, 265, 605, 266, 609, 343, 496, 342],
+            "text": "Sand"
+          }
+        ]
+      },
+      {
+        "boundingBox": [107, 363, 674, 379, 673, 416, 106, 400],
+        "text": "I like to eat bananas",
+        "words": [
+          {
+            "boundingBox": [88, 364, 120, 365, 124, 402, 92, 401],
+            "text": "I"
+          },
+          {
+            "boundingBox": [165, 365, 271, 366, 274, 403, 168, 402],
+            "text": "like"
+          },
+          {
+            "boundingBox": [306, 367, 357, 367, 360, 404, 309, 404],
+            "text": "to"
+          },
+          {
+            "boundingBox": [376, 367, 472, 368, 476, 405, 380, 404],
+            "text": "eat"
+          },
+          {
+            "boundingBox": [491, 369, 677, 371, 680, 408, 495, 406],
+            "text": "bananas"
+          }
+        ]
+      }
+    ]
+  }
+}

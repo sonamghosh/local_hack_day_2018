@@ -1,0 +1,40 @@
+{
+  "statusCode": 202,
+  "body": "",
+  "headers": {
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "content-length": "0",
+    "expires": "-1",
+    "operation-location": "https://eastus.api.cognitive.microsoft.com/vision/v2.0/textOperations/d19b092f-5b6f-478a-8910-0b3d79886f7b",
+    "x-aspnet-version": "4.0.30319",
+    "x-powered-by": "ASP.NET",
+    "apim-request-id": "3f6ac355-376f-4c68-a99a-b3b435878ff6",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "x-content-type-options": "nosniff",
+    "date": "Sun, 02 Dec 2018 04:07:32 GMT",
+    "connection": "close"
+  },
+  "request": {
+    "uri": {
+      "protocol": "https:",
+      "slashes": true,
+      "auth": null,
+      "host": "eastus.api.cognitive.microsoft.com",
+      "port": 443,
+      "hostname": "eastus.api.cognitive.microsoft.com",
+      "hash": null,
+      "search": "?mode=Handwritten",
+      "query": "mode=Handwritten",
+      "pathname": "/vision/v2.0/recognizeText",
+      "path": "/vision/v2.0/recognizeText?mode=Handwritten",
+      "href": "https://eastus.api.cognitive.microsoft.com/vision/v2.0/recognizeText?mode=Handwritten"
+    },
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": "6dbc036b6cad4ec68366da564e52ca88",
+      "content-length": 38
+    }
+  }
+}
