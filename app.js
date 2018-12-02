@@ -1,5 +1,6 @@
 const drive = require("./scripts/drive");
 const analyze = require("./scripts/analyze-image");
+const recognize = require("./scripts/recognize-text");
 const express = require("express");
 const multer = require("multer");
 
@@ -28,13 +29,14 @@ app.post("/", upload.single("file-to-upload"), (req, res) => {
   res.statusCode = 200;
   res.end("Received file: " + req);
   console.log("Received image, analyzing...");
-  analyze.analyzeImage();
+  //analyze.analyzeImage();
+  recognize.recognizeText();
   let timer = setInterval(() => {
     console.log("Analyzed image, uploading...");
     drive.driveUpload("text.txt");
     console.log("Uploaded image. Complete!");
     clearInterval(timer);
-  }, 6000);
+  }, 8000);
 });
 
 // Listen on port
