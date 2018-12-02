@@ -1,24 +1,43 @@
 const drive = require("./scripts/drive");
+const analyze = require("./scripts/analyze-image");
 const express = require("express");
 const multer = require("multer");
-const upload = multer({
-  dest: "uploads/" // this saves your file into a directory called "uploads"
-});
 
+// Setup multer and default storage to jpeg.jpg
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function(req, file, cb) {
+    cb(null, "jpeg" + ".jpg"); //Appending .jpg
+  }
+});
+var upload = multer({ storage: storage });
+
+// Setup express and port
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/uploads/jpeg.jpg");
 });
 
 // It's very crucial that the file name matches the name attribute in your html
 app.post("/", upload.single("file-to-upload"), (req, res) => {
+  const host = req.host;
   res.statusCode = 200;
   res.end("Received file: " + req);
-  drive.driveUpload("text.txt");
+  console.log("Received image, analyzing...");
+  analyze.analyzeImage();
+  let timer = setInterval(() => {
+    console.log("Analyzed image, uploading...");
+    drive.driveUpload("text.txt");
+    console.log("Uploaded image. Complete!");
+    clearInterval(timer);
+  }, 6000);
 });
 
+// Listen on port
 app.listen(port, () => {
   console.log("Server running at http://localhost:" + port);
 });

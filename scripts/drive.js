@@ -34,7 +34,7 @@ function driveUpload(fileName) {
   };
   var media = {
     mimeType: "text/plain",
-    body: fs.createReadStream(path.join(__dirname, "../uploads/" + fileName))
+    body: fs.createReadStream(path.join(__dirname + "/" + fileName))
   };
   drive.files.create({
     auth: jwToken,

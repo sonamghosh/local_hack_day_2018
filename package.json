@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "googleapis": "^35.0.0",
-    "multer": "^1.4.1"
+    "multer": "^1.4.1",
+    "replace-ext": "^1.0.0",
+    "request": "^2.88.0"
   }
 }
