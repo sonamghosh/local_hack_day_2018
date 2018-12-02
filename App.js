@@ -31,7 +31,9 @@ export default class CameraExample extends React.Component {
   snap = async () => {
     if (this.camera) {
       console.log("SNAPPING PICTURE");
-      let photo = await this.camera.takePictureAsync();
+      let photo = await this.camera.takePictureAsync(
+        (options = { quality: 0.9 })
+      );
       console.log("URI from picture snap: " + photo.uri);
       this.setState({ imageUri: photo.uri });
       console.log("imageUri State: " + this.state.imageUri);
