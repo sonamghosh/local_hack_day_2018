@@ -62,7 +62,7 @@ function analyzeImage() {
   // Timer to prevent undefined
   let timer = setInterval(() => {
     // Length of the important section
-    /*  var arrLen = data.regions[0].lines.length;
+    var arrLen = data.regions[0].lines.length;
 
     // Iterate through bounding boxes in JSON and parse strings
     for (var i = 0; i < arrLen; i++) {
@@ -79,8 +79,8 @@ function analyzeImage() {
 
     // Join Strings together, \n indicates line sep
     var outStr = arr.join(" ");
-    console.log(outStr);*/
-    var outStr = JSON.stringify(data);
+    console.log(outStr);
+    //var outStr = JSON.stringify(data);
 
     // Save text string to .txt file
     const fs = require("fs");
