@@ -12,6 +12,8 @@ To access the **main** (backend) scripts within this repository go to the **src*
 
 `response200.json` - Example JSON output when one runs the `recognize-text.js` script on a image that is taken by the phone camera. 
 
+Note for Spell Check functionality, the `spell_check.js` script is used to analyze extracted text from `analyze-image.js` or `recognize-text.js`, which calls upon Microsoft Azure's Bing Spell Check API. 
+
 Lastly, all the backend functionalty developed on **NodeJS (Javascript)** is used with the mobile app (`app.js`) that represents the frontend of our stack which was developed using the **React Native** framework for developing apps using **ReactJS (Javascript) **
 `
 
