@@ -37,7 +37,7 @@ Added Python Scripts that use the bounding box output of a extracted text and us
 
 **TODO**: Insert Image Output here in the future
 
-** Update Dec 10, 2018**:
+**Update Dec 10, 2018**:
 
 Playing around with using Neural Model for OCR Handwriting Recognition, so that there is less reliance on using a Cloud API for computation since it requires computation credits; however, will maybe use Cloud Services (Google Cloud, AWS, Microsoft Azure) to train complex model using GPU power available in the cloud.
 
