@@ -24,9 +24,23 @@ The app may be downloaded from here (remember to install Expo first from the Goo
 
 https://expo.io/@nomlahlui/essay-boi
 
-`Check out our devpost as well!:
+Check out our devpost as well!:
 
 https://devpost.com/software/essay-boi
 
 <img src = "full_stack_diagram.png">
 
+
+**Update Dec 04, 2018**:
+
+Added Python Scripts that use the bounding box output of a extracted text and used the OpenCV package to draw out the boxes on top of the detected word including adding the detected words on there. This will be used in the future for a potential Augumented Reality (AR) version of the project. 
+
+**TODO**: Insert Image Output here in the future
+
+** Update Dec 10, 2018**:
+
+Playing around with using Neural Model for OCR Handwriting Recognition, so that there is less reliance on using a Cloud API for computation since it requires computation credits; however, will maybe use Cloud Services (Google Cloud, AWS, Microsoft Azure) to train complex model using GPU power available in the cloud.
+
+Idea is to utilize a Convolutional Recurrent Neural Network (CRNN) created on the PyTorch Deep Learning Framework Library (they recently updated to version 1.0, so there is testing to be done , but includes new neat features such as deploying model for production to be used in other environments such as mobile etc, C++ frontends, etc.). Example of a paper that uses a CRNN is found in the following link: https://arxiv.org/pdf/1507.05717.pdf (**An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition** by *Shi et.al, 2015*). A CRNN is essentially a complex neural network structure made up of both Convolutional Neural Network (CNN) and Recurrent Neural Network architectures. In the case of the paper linked above, it consists of convolutional layers which extract features from the input image which contains text followed by a bidirectional LSTM (Long Short Term Memory) RNN structure consisting of recurrent layers predicting a label distribution followed by a transcription layer transcribing the predictions of each frame to form the output. (**TODO**- insert architecture picture).
+
+Note: Not entirely sure if this will work, seems like most instances are trying their best on hard handwriting types such as cursive and anything else from old times. Also not sure, if it does multiple lines for multiple sentences. Seems like the architectures have nothing to do with bounding boxes either so there must be a separate thing to do with that. Will currently test on a sample localhost with a Flask app to upload pics, maybe hopefully can turn into mobile production through ONNX to transform PyTorch model into a Caffe2 model to be used on Android. 
